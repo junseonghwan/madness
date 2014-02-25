@@ -7,6 +7,7 @@ Objective: To create an algorithm which assigns a probability of winning to two 
 
 ### Ideas:
 ...
+Test
 
 ### Methods:
 ...
