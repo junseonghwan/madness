@@ -49,7 +49,9 @@ Weekly to-do
 
 2. Modelling
 - Finish random forest
+- Robust model?
 
+3. Read about "Deep Learning"
 
 ### Mar. 1-8
 - Final cleaning, structure for training/testing data
