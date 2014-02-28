@@ -3,7 +3,9 @@ Notes of Madness
 
 # Tournament dates	
 March 13-April 2, 2011-2012
+
 March 19–April 8, 2012-2013
+
 March 18–April 7, 2013-2014
 
 Overview
