@@ -46,6 +46,7 @@ Weekly to-do
 1. Rankings/Seeding Algorithms
 - Try RPI
 - Implement Fearnhead and compare with RPI
+
 2. Modelling
 - Finish random forest
 
