@@ -16,6 +16,8 @@ Objective: To create an algorithm which assigns a probability of winning to two 
 ...
 Test
 
+1. Cluster the teams to several groups. So when A play B, the teams that belong to the same group as B can be used as tranning data, so does for team A.
+
 ### Methods:
 ...
 
