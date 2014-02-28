@@ -44,17 +44,14 @@ Weekly to-do
 
 ### TO DO after meeting Feb 27th
 Rankings/Seeding Algorithms
----------------------------
 - Try RPI
 - Implement Fearnhead and compare with RPI
 
 Modelling
-----------
 - Finish random forest
 - Robust model?
+- Read about "Deep Learning"
 
-Read about "Deep Learning"
----------------------------
 
 ### Mar. 1-8
 - Final cleaning, structure for training/testing data
