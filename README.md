@@ -43,15 +43,18 @@ Weekly to-do
 - Need JavaScript code for scraping the [NCAA site](http://stats.ncaa.org/team/inst_team_list) for more data?
 
 ### TO DO after meeting Feb 27th
-1. Rankings/Seeding Algorithms
+Rankings/Seeding Algorithms
+---------------------------
 - Try RPI
 - Implement Fearnhead and compare with RPI
 
-2. Modelling
+Modelling
+----------
 - Finish random forest
 - Robust model?
 
-3. Read about "Deep Learning"
+Read about "Deep Learning"
+---------------------------
 
 ### Mar. 1-8
 - Final cleaning, structure for training/testing data
