@@ -42,6 +42,14 @@ Weekly to-do
 - Download [data provided by Kaggle](http://www.kaggle.com/c/march-machine-learning-mania/data)
 - Need JavaScript code for scraping the [NCAA site](http://stats.ncaa.org/team/inst_team_list) for more data?
 
+### TO DO after meeting Feb 27th
+1. Rankings/Seeding Algorithms
+- Try RPI
+- Implement Fearnhead and compare with RPI
+2. Modelling
+- Finish random forest
+
+
 ### Mar. 1-8
 - Final cleaning, structure for training/testing data
 - Implement simple methods
