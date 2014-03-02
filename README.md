@@ -44,7 +44,7 @@ Weekly to-do
 
 ### TO DO after meeting Feb 27th
 Rankings/Seeding Algorithms
-- Try RPI
+- Try RPI. [RPI Data](http://www.teamrankings.com/ncb/rpi/)
 - Implement Fearnhead and compare with RPI
 
 Modelling
