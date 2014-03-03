@@ -44,7 +44,7 @@ Weekly to-do
 
 ### TO DO after meeting Feb 27th
 Rankings/Seeding Algorithms
-- Try RPI
+- Try RPI. [RPI Data](http://www.teamrankings.com/ncb/rpi/)
 - Implement Fearnhead and compare with RPI
 
 Modelling
@@ -82,6 +82,25 @@ Features
 - RPI/Seed
 - [Fearnhead Rank](http://www.maths.lancs.ac.uk/~fearnhea/Basketball.html)
 - Game location
+
+
+#### Some game data variables descriptions
+- Minutes: Total minutes played (?)
+- FGM: Field goal made, number of goals made (successful throws)
+- FGA: Field goal attempted, number of throws at the basket, disconsidering free throws
+- Three FGM: Number of three-point goals made
+- Three FGA: Number of three-point goals attempted
+- FT: Number of free throws made
+- FTA: Number of free throw attempted
+- PTS: Points
+- OffReb: Number of offensive rebounds
+- DefReb: Number of deffensive rebounds
+- AST: Number of assistances
+- TO: Number of turnovers (opponent team steals the ball)
+- STL: Number of steals (you steal the ball from your opponent)
+- BLK: Number of blocks
+- Fouls: Number of fouls
+- TotReb: Total rebounds
 
 Odds of winning $1 billion
 --------------------------
