@@ -1,7 +1,5 @@
-Notes of Madness
-================
-
 # Tournament dates	
+
 March 13-April 2, 2011-2012
 
 March 19–April 8, 2012-2013
@@ -13,14 +11,73 @@ Overview
 Objective: To create an algorithm which assigns a probability of winning to two teams that are matched up, based on any available data from NCAA Div I Men's Basketball.
 
 ### Ideas:
-...
-Test
 
 1. Cluster the teams to several groups. So when A play B, the teams that belong to the same group as B can be used as tranning data, so does for team A.
 
 ### Methods:
-...
 
+Modelling for number of shots taken
+---
+
+A strong predictor for the points scored is the number of shots taken.  
+The game is played over 40 minutes with each team taking a turn to attack. A turn can take
+at most 35 seconds before a shot must be taken (must reach the rim). Hypothetically, if each 
+team takes full 35 seconds to take a shot, there are roughly 70 turns in total (35 turns each).
+
+Of course, the amount of time needed to take a shot varies by possession and it may occur that
+a team's attach may result in no shots taken if the team makes a mistake of turning the ball over.
+Offensive rebounds also contribute to the number of shots taken as a team gets another possession 
+upon gaining an offensive rebound.
+
+We have largely, two ways to model for the number of shots taken.
+
+1. Model for one possession using Markov Chain with state space defined as shown in figure (TODO).
+
+2. Use two stage model (hierarchical model) or GLMM to model for N_{ij} as can be see in the figure below (TODO).
+
+There are probably more ways, but we have discussed only the first one extensively in our meeting on March 2nd.
+
+For the first method, I think we can obtain the MLE for the transition matrix [link](http://www.stat.cmu.edu/~cshalizi/462/lectures/06/markov-mle.pdf).
+If we use CTMC, I wonder if we can use ideas explained [here](http://www.stat.ubc.ca/~bouchard/courses/stat547-sp2013-14/lecture/2014/02/05/lecture10.html).
+
+For hierarchical model, we can use either Bayesian model or frequentist approach. The picture to explain this will come soon.
+
+Modelling the performance of teams 
+---
+
+Another approach we discussed is to directly model for team's performance against different types of teams.
+
+When we get the matchup (first round), the two teams will surely not have played against each other during the 
+regular season. However, if we can label each team as playing a specific type (for example, defensive) and if
+we can somehow measure how each team played against the opponent of specific type, then it becomes possible 
+to predict the outcome of the games.
+
+One approach is to use the idea of [matrix completion](http://jmlr.org/papers/volume11/mazumder10a/mazumder10a.pdf)
+to fill out missing entries of a matrix A where A is a TxT matrix with T being the number of teams. 
+The entries A_{ij} is supposed to measure performance of team i when playing against team j. But as mentioned above,
+team i probably never played team j. The matrix completion relies on the idea that a matrix A is actually 
+a product of two lower dimensional matrices B and C: A = BC + eI where e is the error term. 
+We take B as TxL and C as LxT where L is the number of types of teams. 
+
+An example where matrix completion can be useful is Netflix movie recommendation. A in this case would be
+NxM where N is the number of users (millions) and M is the number of movies (thousands). Obviously, 
+users will not have watched all M movies and will not have rated all M movies hence, A will have many missing
+entries. However, if we consider the movies as grouped by L << M genres, then we can take A = BC where
+B is NxL, which describes preference of users to each genre and C is LxM, which sort of describes
+the rank of each movie within the genre.
+
+Applying this idea to basketball, L would be the number of types of teams, for example, defensive, 3-pt shooting, etc.
+And we should be able to complete the matrix using the method described in the above link (which is already implemented).
+Not sure how good it will work and we still have to work out some details but this can be a promising approach.
+
+Defining partial order on teams
+---
+
+The main idea is that each team has a true strength (latent) but this strength can vary depending 
+on which team it is playing. So if we take the latent strength as l_i, then there is a conditional scaling by 
+lambda\_{i|j}. This idea requires estimation of conditional quantities such as lambda\_{i|j}.
+
+The details have not been worked out but we should continue to think about this approach.
 
 Dates
 --------
