@@ -47,7 +47,7 @@ dbListTables(conn = con)
 
 ```r
 
-# List the columns in the connection
+# List the columns in the "game_data_2011" table from the data base
 dbListFields(conn = con, name = "game_data_2011")
 ```
 
