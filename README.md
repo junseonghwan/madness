@@ -10,7 +10,7 @@ Overview
 --------
 Objective: To create an algorithm which assigns a probability of winning to two teams that are matched up, based on any available data from NCAA Div I Men's Basketball.
 
-#### Contest rules
+#### Contest rules ($1B bracket)
 [Scan/read this](http://www.quickenloansbracket.com/rules/rules.html)
 
 ### Ideas:
