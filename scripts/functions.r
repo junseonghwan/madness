@@ -46,8 +46,9 @@ get_test_data<-function(ncaaDB, year, avg=F)
   home_data<-teamData[match(games[,2], teamData$team_id), col_teams]
   
   # get rid of the useless features
-  col_ids <- -c(1, 2, 3, sum(col_teams)-1, sum(col_teams))
-  
+#   col_ids <- -c(1, 2, 3, sum(col_teams)-1, sum(col_teams))
+    col_ids <- -c(sum(col_teams)-1, sum(col_teams))
+
   ## for away data
   away_data <- away_data[, col_ids]
   # make every attribute numeric
