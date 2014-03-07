@@ -1,4 +1,3 @@
-
 Overview
 --------
 Objective: To create an algorithm which assigns a probability of winning to two teams that are matched up, based on any available data from NCAA Div I Men's Basketball.
@@ -13,7 +12,7 @@ Objective: To create an algorithm which assigns a probability of winning to two 
 ### Methods:
 
 Modelling for number of shots taken
----
+-----------------
 
 A strong predictor for the points scored is the number of shots taken.  
 The game is played over 40 minutes with each team taking a turn to attack. A turn can take
@@ -75,6 +74,17 @@ lambda\_{i|j}. This idea requires estimation of conditional quantities such as l
 
 The details have not been worked out but we should continue to think about this approach.
 
+Straightforward "RPI" approach
+-----------------------
+
+### Idea
+For each feature we want to use, we "RPI" it. We will create a function which will transform one feature, say, eFG%, and transform it in order to normalize over all opponents during the regular season, and we do this for each team. So in the example of eFG%, for each game in the regular season, we measure 
+1. the team's eFG% in that game
+2. their opponent's aggregate eFG% AGAINST over the season (except for this game). 
+3. their opponent's opponent's eFG% FOR against all other opponents over the season, aggregated somehow (TBD)
+We then take the 3 statistics for each game, and aggregate (TBD also) them into one metric. We can then either use the metric for each game for each team, or aggregate this metric over all games. 
+
+We can use normal stats or advanced stats. We can then put these transformed data into some model where we use regular season stats for any one given year to predict the playoff outcomes (score differential or binary win/loss).
 
 Data Description
 --------------------
