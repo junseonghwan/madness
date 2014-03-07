@@ -1,10 +1,3 @@
-# Tournament dates	
-
-March 13-April 2, 2011-2012
-
-March 19–April 8, 2012-2013
-
-March 18–April 7, 2013-2014
 
 Overview
 --------
@@ -81,6 +74,30 @@ on which team it is playing. So if we take the latent strength as l_i, then ther
 lambda\_{i|j}. This idea requires estimation of conditional quantities such as lambda\_{i|j}.
 
 The details have not been worked out but we should continue to think about this approach.
+
+
+Data Description
+--------------------
+
+## Advanced Statistics
+
+- Possessions (POSS): 0.96*(FGA-ORb+TO+(0.475*FTA))
+- Offensive Rating (ORt): 100*PtsFor/POSS
+- Defensive Rating (DRt): 100*PtsAgainst/POSS
+- Effective FG% (eFG): (FGM + (0.5)3FGM)/FGA
+- True Shooting % (tFG): Pts/2(FGA+(0.475)FTA)
+- Free-throw Rate (FTR): FTA/FGA
+- Turnover Rate (TOR): 100*TO/(FGA+(FTA*0.475)+TO)
+- Offense Rebound Rate (ORR): 100*ORb/(ORb+OppDRb)
+
+### Tournament dates	
+
+March 13-April 2, 2011-2012
+
+March 19–April 8, 2012-2013
+
+March 18–April 7, 2013-2014
+
 
 Dates
 --------
