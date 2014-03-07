@@ -1,4 +1,4 @@
-# soft-impute
+# soft-impute.... blah
 # la: lambda
 # Z.0: initial Z_old in the algorithm
 # X: data
