@@ -1,0 +1,17 @@
+Some thoughts
+---
+
+1. Is there a way to utilize Bayesian optimization (for example in determining the weights
+for RPI'ing)? or when we fill out the entries (e.g, the best way to fill out the bracket)
+
+2. Player stats as features -- compute the advanced statistics for the players as well
+
+3. Human prediction seemed to be doing the best -- for each matchup, we will need to 
+use the machine predictor but also to look at each game and make judgement on the games
+as well (this is possible for Buffet challenge but not for Kaggle)
+
+4. On ranking: learning to rank? DPP?
+
+5. Prob matrix factorization
+
+6. PageRank?
