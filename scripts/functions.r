@@ -84,4 +84,23 @@ get_test_data<-function(ncaaDB, year, avg=F)
   return(list(testDat = dat, testY = testY))
 }
 
+get_test_data_wIDS<-function(ncaaDB, year)
+{
+  year_str<-paste("game_data_", year, sep="")
+  select_str<-paste("select * from ", year_str, sep="")
+  gameData<-dbGetQuery(ncaaDB, select_str)
+  
+  dates<-as.Date(gameData$game_date, "%m/%d/%Y")
+  index<-(start_date$year == year)
+  tournament_date<-start_date[index, 2]
+  
+  # get the games (with only the ids)
+  games<-gameData[dates >= tournament_date, c("away_team_id", "home_team_id")]
+  winlose<-gameData[dates >= tournament_date, c("away_team_pts", "home_team_pts")]
+  testY <- winlose[,1] - winlose[,2] > 0
+  
+  
+  
+  return(list(ids = games, testY = testY))
+}
 
