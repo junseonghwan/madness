@@ -8,6 +8,7 @@ sqlite    <- dbDriver("SQLite")
 ncaaDB1 <- dbConnect(sqlite,"data/ncaa.db")
 dbListTables(ncaaDB1)
 
+
 game_data <- get_train_data(ncaaDB1, 2012)
 
 ## These are the ids to match off of

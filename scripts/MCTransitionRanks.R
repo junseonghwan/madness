@@ -78,7 +78,7 @@ if (abs(eigenSystem$values[1] - 1) > 0.001)
   stop("Eigenvalue error")
 
 ## sort the ranks vector
-sortInd <- sort.int(ranks, index = T)$ix
+sortInd <- sort.int(abs(ranks), index = T)$ix
 rankDf <- data.frame(rank = 1:nTeams, team_id = ids[sortInd])
 teamIds <- dbGetQuery(ncaaDB1, "Select team_id, team_name from team_mappings_2012")
 rankFinal <- join(rankDf, teamIds, by = "team_id")
