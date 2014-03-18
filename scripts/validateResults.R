@@ -1,24 +1,18 @@
 ## Test the results
 library(RSQLite)
 source("scripts/functions.r")
-sqlite    <- dbDriver("SQLite")
-ncaaDB1 <- dbConnect(sqlite,"data/ncaa.db")
+source("scripts/mcFunctions.r")
 
-game_data <- get_test_data_wIDS(ncaaDB1, 2012)
+# aggregate all of the years data
+fitCoef<-mcLogistic(2010:2014)
+save(fitCoef, file="coef")
 
-## For each of these games we need a list of winners and losers
-## Easiest way is to likely have an indicator if the home team won
-## then match to ranks and determine probability
+# do cross validation
+h_opt0<-cv(2010, 1:5, fitCoef) # error?
+h_opt1<-cv(2011, 1:7, fitCoef) # h = 5
+h_opt2<-cv(2012, 1:5, fitCoef) # error?
+h_opt3<-cv(2013, 1:5, fitCoef) # h = 3
 
-ranked <- read.csv("data/LRMCRanking2012.csv")
+h_opt<-(h_opt1[1]*h_opt1[2]+h_opt3[1]*h_opt3[2])/(h_opt1[2] + h_opt3[2]) # roughly 4
+# take weighted average to find h_opt
 
-len <- length(game_data$testY)
-
-sim <- matrix(0, nrow = len, ncol = 1)
-for (i in 1:len)
-{
-  sim[i] <- (which(ranked$team_id == game_data$ids[i, 1]) < which(ranked$team_id == game_data$ids[i, 2]))
-}
-
-predict <- sum(1 * (sim == game_data$testY)) / len
-## [1] 0.5890411

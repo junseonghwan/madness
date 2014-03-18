@@ -1,5 +1,6 @@
 library(RSQLite)
 
+setwd("../Dropbox//competitions//data")
 dirName <- "~/Dropbox/Shared Folders/NCAA/data"
 ### set working dir
 setwd(dirName)
